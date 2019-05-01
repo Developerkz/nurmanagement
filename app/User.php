@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function companies()
+    {
+        return $this->hasOne(Company::class, 'user_id');
+    }
+
     public function isAdmin(){
         return $this->role_id == Role::ADMIN_ID;
     }

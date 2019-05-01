@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Superviewer
+class Employee
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,7 @@ class Superviewer
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->isSuperviewer()){
+        if(Auth::user()->isEmployee()){
             return $next($request);
         }else{
             Session::flash('warning' , 'Доступ запрещен!');

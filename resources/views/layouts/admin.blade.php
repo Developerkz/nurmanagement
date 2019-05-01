@@ -105,6 +105,11 @@
 
                     <li class="header">Настройки</li>
                     <li>
+                        <a href="{{route('company.index')}}">
+                            <i class="fa fa-money"></i> <span>Компании</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{route('role.index')}}">
                             <i class="fa fa-gears"></i> <span>Роли</span>
                         </a>
