@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="panel" style="padding: 10px">
                     <div class="panel-header">
-                        <h2>Изменить компанию</h2>
+                        <h2>Изменить</h2>
                         <a class="btn btn-primary btn-sm" href="{{route('company.index')}}">Назад</a>
                     </div>
                     <div class="panel-body">

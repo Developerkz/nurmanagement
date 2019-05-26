@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="panel"  style="padding: 10px">
                     <div class="panel-header">
-                        <h2>Изменить роль</h2>
+                        <h2>Изменить</h2>
                         <a  class="btn btn-primary btn-sm" href="{{route('role.index')}}">Назад</a>
                     </div>
                     <div class="panel-body">
@@ -19,11 +19,6 @@
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block" value="Изменить">
                             </div>
-                            @if($errors)
-                                @foreach($errors->all() as $error)
-                                    <p class="m-1 text-danger">{{$error}}</p>
-                                @endforeach
-                            @endif
                         </form>
                     </div>
                     <div class="panel-footer">

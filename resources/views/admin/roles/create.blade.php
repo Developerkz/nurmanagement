@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="panel">
                     <div class="panel-header">
-                        <h2>Добавить роль</h2>
+                        <h2>Добавить</h2>
                         <a  class="btn btn-primary btn-sm" href="{{route('role.index')}}">Назад</a>
                     </div>
                     <div class="panel-body">

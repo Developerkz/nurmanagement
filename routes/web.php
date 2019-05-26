@@ -44,6 +44,22 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/roles/edit/{id}', ['as' => 'role.edit', 'uses' => 'RoleController@edit'])->where('id', '[0-9]+');
         Route::post('/roles/update/{id}', ['as' => 'role.update', 'uses' => 'RoleController@update'])->where('id', '[0-9]+');
 
+        Route::get('/templates/create', ['as' => 'template.create', 'uses' => 'TemplateController@create']);
+        Route::post('/templates/store', ['as' => 'template.store', 'uses' => 'TemplateController@store']);
+        Route::get('/templates', ['as' => 'template.index', 'uses' => 'TemplateController@index']);
+        Route::get('/templates/edit/{id}', ['as' => 'template.edit', 'uses' => 'TemplateController@edit'])->where('id', '[0-9]+');
+        Route::get('/templates/template/{id}', ['as' => 'template.details', 'uses' => 'TemplateController@details'])->where('id', '[0-9]+');
+        Route::get('/templates/template/calendar/{id}', ['as' => 'template.calendar', 'uses' => 'TemplateController@calendar'])->where('id', '[0-9]+');
+        Route::post('/templates/update/{id}', ['as' => 'template.update', 'uses' => 'TemplateController@update'])->where('id', '[0-9]+');
+        Route::post('/templates/delete/{id}', ['as' => 'template.delete', 'uses' => 'TemplateController@delete'])->where('id', '[0-9]+');
+
+
+        Route::get('/tasks/create', ['as' => 'task.create', 'uses' => 'TaskController@create']);
+        Route::post('/tasks/store', ['as' => 'task.store', 'uses' => 'TaskController@store']);
+        Route::get('/tasks', ['as' => 'task.index', 'uses' => 'TaskController@index']);
+        Route::get('/tasks/edit/{id}', ['as' => 'task.edit', 'uses' => 'TaskController@edit'])->where('id', '[0-9]+');
+        Route::post('/tasks/update/{id}', ['as' => 'task.update', 'uses' => 'TaskController@update'])->where('id', '[0-9]+');
+        Route::post('/tasks/delete/{id}', ['as' => 'task.delete', 'uses' => 'TaskController@delete'])->where('id', '[0-9]+');
     });
 
     Route::get('/user/edit', ['as' => 'self.user.edit', 'uses' => 'UserController@selfEdit']);

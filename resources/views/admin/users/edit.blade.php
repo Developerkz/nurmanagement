@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="panel"  style="padding: 10px">
                     <div class="panel-header">
-                        <h2>Изменить пользователя</h2>
+                        <h2>Изменить</h2>
                         <a  class="btn btn-primary btn-sm" href="{{route('user.index')}}">Назад</a>
                     </div>
                     <div class="panel-body">

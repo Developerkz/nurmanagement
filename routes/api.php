@@ -19,10 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::name('api.')->group(function () {
-    Route::get('/orders', ['as' => 'order.index', 'uses' => 'Api\OrderController@index']);
-    Route::post('/orders/delete/{id}', ['as' => 'order.delete', 'uses' => 'Api\OrderController@delete']);
-    Route::post('/orders/accept/{id}', ['as' => 'order.accept', 'uses' => 'Api\OrderController@accept']);
-    Route::post('/debtors/all', ['as' => 'debts.sum', 'uses' => 'Api\OrderController@getDebtSum']);
-
-    Route::get('/debtors', ['as' => 'debt.index', 'uses' => 'Api\DebtorController@index']);
+    Route::get('/templates/template/calendar/{id}', ['as' => 'template.details', 'uses' => 'Api\TaskController@details'])->where('id', '[0-9]+');
 });
