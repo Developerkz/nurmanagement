@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Task;
 use App\Template;
 use Validator;
 use Session;
@@ -31,7 +32,7 @@ class TemplateController extends Controller
             $template->fill($request->all());
             $template->save();
             Session::flash('success', 'Элемент успешно добавлен!');
-            return redirect()->back();
+            return redirect()->route('template.edit', ['id' => $template->id]);
         }
     }
 
@@ -78,7 +79,7 @@ class TemplateController extends Controller
             return redirect()->back();
         }
 
-        return view('admin.templates.edit', compact('template'));
+        return view('admin.templates.edit', compact('template', 'tasks'));
     }
 
     public function update(Request $request, $id)

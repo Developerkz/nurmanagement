@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\CompanyType;
 use App\Role;
+use App\Template;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -22,12 +23,13 @@ class CompanyController extends Controller
     public function create()
     {
         $companyTypes = CompanyType::all();
+        $templates = Template::all();
         $users = User::where('role_id' , Role::CLIENT_ID)->get();
         if(count($companyTypes) == 0 || count($users) == 0){
             Session::flash('warning' , 'Типов компаний или пользователей не существует!');
             return redirect()->back();
         }
-        return view('admin.companies.create', compact("companyTypes","users"));
+        return view('admin.companies.create', compact("companyTypes","users", "templates"));
     }
 
     public function store(Request $request)
@@ -35,6 +37,7 @@ class CompanyController extends Controller
         $validator = Validator::make($request->all(), [
             'name' =>'required',
             'user_id' =>'required|numeric| min:0',
+            'template_id' =>'numeric| min:0',
             'company_type_id' =>'required|numeric| min:0',
             'registration_date' =>'required|date',
         ]);
@@ -63,6 +66,7 @@ class CompanyController extends Controller
 
     public function edit($id){
         $company = Company::find($id);
+        $templates = Template::all();
         $companyTypes = CompanyType::all();
         if(!$company){
             Session::flash('error' , 'Компания не существует!');
@@ -74,7 +78,7 @@ class CompanyController extends Controller
             return redirect()->back();
         }
 
-        return view('admin.companies.edit', compact('company', 'companyTypes',"users"));
+        return view('admin.companies.edit', compact('company', 'companyTypes',"users", "templates"));
     }
 
     public function update(Request $request, $id){
@@ -88,6 +92,7 @@ class CompanyController extends Controller
             'name' =>'required',
             'user_id' =>'required|numeric| min:0',
             'company_type_id' =>'required|numeric| min:0',
+            'template_id' =>'numeric| min:0',
             'registration_date' =>'required|date',
         ]);
 

@@ -31,8 +31,14 @@ class TaskController extends Controller
         } else {
             $task = new Task();
             $task->fill($request->all());
+
             $task->start_date = $task->dateToNumber($request->start_date);
             $task->end_date = $task->dateToNumber($request->end_date);
+
+            if($task->start_date > $task->end_date ){
+                return redirect()->back()->withErrors(['start_date' => 'Дата начала не может быть меньше чем дата конца']);
+            }
+
             $task->save();
             Session::flash('success', 'Успешно добавлена!');
             return redirect()->back();

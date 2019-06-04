@@ -36,6 +36,14 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label>Шаблон</label>
+                                <select name="template-id" class="form-control">
+                                    @foreach($templates as $template)
+                                        <option value="{{$template->id}}">{{$template->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             {{csrf_field()}}
                             <div class="form-group">
                                 <input type="submit" class="btn btn-success btn-block" value="Добавить">

@@ -110,11 +110,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('task.index')}}">
-                            <i class="fa fa-tasks"></i> <span>Задачи</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="{{route('company.index')}}">
                             <i class="fa fa-money"></i> <span>Компании</span>
                         </a>

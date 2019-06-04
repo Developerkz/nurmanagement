@@ -16,6 +16,7 @@
                                 <th>ID</th>
                                 <th>Наименование</th>
                                 <th>Описание</th>
+                                <th>Шаблон</th>
                                 <th>Действия</th>
                             </tr>
                             </thead>
@@ -25,6 +26,7 @@
                                     <td>{{$task->id}}</td>
                                     <td>{{$task->name}}</td>
                                     <td>{{$task->description}}</td>
+                                    <td>{{$task->template->name}}</td>
                                     <td class="d-flex">
                                         <button type="button" class="btn btn-danger btn-xs mr-1" data-toggle="modal" data-target="#exampleModal{{$task->id}}">
                                             Удалить

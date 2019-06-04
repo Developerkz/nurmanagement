@@ -33,11 +33,19 @@
                                 <label>Тип компании</label>
                                 <select name="company_type_id" class="form-control">
                                     @foreach($companyTypes as $companyType)
-                                        <option  {{$companyType->id == $company->companyType->id}} value="{{$companyType->id}}">{{$companyType->name}}</option>
+                                        <option  {{$companyType->id == $company->companyType->id ? 'selected' : ''}} value="{{$companyType->id}}">{{$companyType->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
+                            <div class="form-group">
+                                <label>Шаблон</label>
+                                <select name="template-id" class="form-control">
+                                    @foreach($templates as $template)
+                                        <option {{$template->id == $company->template->id ? 'selected' : ''}} value="{{$template->id}}">{{$template->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             {{csrf_field()}}
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block" value="Изменить">

@@ -27,7 +27,11 @@ class Task extends Model
 
     public function template()
     {
-        return $this->belongsTo(Template::class, 'template_id');
+        return $this->belongsTo(Template::class, 'template_id')->withDefault([
+            'id' => 0,
+            'name' => 'Шаблон был удален',
+            'description' => 'Просим вас удалить это значение или же происвоить ему шаблон'
+        ]);;
     }
 
 

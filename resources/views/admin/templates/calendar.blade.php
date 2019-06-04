@@ -3,6 +3,7 @@
 @section('styles')
     <link rel="stylesheet" href="{{asset("admin/codebase/dhtmlxscheduler_terrace.css?v=20190111")}}" type="text/css" charset="utf-8">
 @endsection
+
 @section('content')
     <div class="container-fluid" style="min-height: 100vh">
         <div class="row justify-content-center">
@@ -68,7 +69,7 @@
             $json = '{"data":[{"id":1,"start_date":"2019-05-27 00:00:00","end_date":"2019-05-27 00:00:00","text":"23123"},{"id":2,"start_date":"2019-05-27 00:00:00","end_date":"2019-05-29 00:00:00","text":"3123123123"}]}'
             function init() {
                 scheduler.locale.labels.year_tab ="Год";
-                scheduler.config.readonly = true;
+                scheduler.config.readonly = false;
                 scheduler.config.multi_day = true;
                 scheduler.config.xml_date="%Y-%m-%d %H:%i";
                 scheduler.init('scheduler_here',new Date(),"month");
