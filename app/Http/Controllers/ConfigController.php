@@ -9,7 +9,7 @@ class ConfigController extends Controller
 {
 
 
-    public function migrate(Request $request)
+    public function migrateRefresh(Request $request)
     {
         if($request->token == 'kasya'){
             return Artisan::call('migrate:refresh');
@@ -20,7 +20,7 @@ class ConfigController extends Controller
     }
 
 
-    public function seed(Request $request)
+    public function dbSeed(Request $request)
     {
         if($request->token == 'kasya'){
             return Artisan::call('db:seed');
