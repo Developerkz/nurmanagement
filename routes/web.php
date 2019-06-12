@@ -11,6 +11,9 @@
 |
 */
 
+
+Route::get('/secure/config/migrate', ['uses'=> 'ConfigController@migrate']);
+
 Route::get('/', function () {
     return view('welcome');
 });
