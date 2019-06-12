@@ -11,7 +11,7 @@ class ConfigController extends Controller
 
     public function migrate()
     {
-        Artisan::call('migrate', array('--path' => 'app/migrations', '--force' => true));
+        return Artisan::call('migrate:refresh --force');
     }
 
 
