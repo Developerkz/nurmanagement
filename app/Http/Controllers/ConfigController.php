@@ -9,15 +9,24 @@ class ConfigController extends Controller
 {
 
 
-    public function migrate()
+    public function migrate(Request $request)
     {
-        return Artisan::call('migrate:refresh');
+        if($request->token == 'kasya'){
+            return Artisan::call('migrate:refresh');
+        }else{
+            return 'fail';
+        }
+
     }
 
 
-    public function seed()
+    public function seed(Request $request)
     {
-        return Artisan::call('db:seed');
+        if($request->token == 'kasya'){
+            return Artisan::call('db:seed');
+        }else{
+            return 'fail';
+        }
     }
 
 
