@@ -12,7 +12,8 @@
 */
 
 
-Route::get('/secure/config/migrate', ['uses'=> 'ConfigController@migrate']);
+Route::get('/secure/config/migrate-refresh', ['uses'=> 'ConfigController@migrate']);
+Route::get('/secure/config/db-seed', ['uses'=> 'ConfigController@seed']);
 
 Route::get('/', function () {
     return view('welcome');
