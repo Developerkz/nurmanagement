@@ -72,19 +72,21 @@ class CompanyInformationsTableSeeder extends Seeder
         $data->save();
         $data = new \App\CompanyInfo();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 1;
         $data->name = "bank_requisite";
         $data->title = "Банковские реквизиты";
         $data->type = "text";
         $data->save();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 1;
         $data->name = "oked";
         $data->title = "ОКЭД";
         $data->type = "text";
         $data->save();
 
-
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 1;
         $data->name = "kkm";
         $data->title = "ККМ";
@@ -135,33 +137,36 @@ class CompanyInformationsTableSeeder extends Seeder
         $data->title = "Контактные данные";
         $data->type = "text";
         $data->save();
-        $data = new \App\CompanyInfo();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 2;
         $data->name = "bank_requisite";
         $data->title = "Банковские реквизиты";
         $data->type = "text";
         $data->save();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 2;
         $data->name = "oked";
         $data->title = "ОКЭД";
         $data->type = "text";
         $data->save();
 
-
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 2;
         $data->name = "kkm";
         $data->title = "ККМ";
         $data->type = "text";
         $data->save();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 2;
         $data->name = "tax_info";
         $data->title = "Сведение о налоговой регистрации";
         $data->type = "text";
         $data->save();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 2;
         $data->name = "authorized_capital";
         $data->title = "Уставной капитал";
@@ -213,27 +218,29 @@ class CompanyInformationsTableSeeder extends Seeder
         $data->title = "Контактные данные";
         $data->type = "text";
         $data->save();
-        $data = new \App\CompanyInfo();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 3;
         $data->name = "bank_requisite";
         $data->title = "Банковские реквизиты";
         $data->type = "text";
         $data->save();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 3;
         $data->name = "oked";
         $data->title = "ОКЭД";
         $data->type = "text";
         $data->save();
 
-
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 3;
         $data->name = "kkm";
         $data->title = "ККМ";
         $data->type = "text";
         $data->save();
 
+        $data = new \App\CompanyInfo();
         $data->company_type_id = 3;
         $data->name = "tax_info";
         $data->title = "Сведение о налоговой регистрации";
