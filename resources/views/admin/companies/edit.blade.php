@@ -42,7 +42,6 @@
                                 <label>Шаблон</label>
                                 <select name="template-id" class="form-control">
                                     @foreach($templates as $template)
-                                        <option {{$template->id == $company->template ?  $company->template->id : 0 ? 'selected' : ''}} value="{{$template->id}}">{{$template->name}}</option>
                                         <option {{$template->id == $company->template_id ? 'selected' : ''}} value="{{$template->id}}">{{$template->name}}</option>
                                     @endforeach
                                 </select>
