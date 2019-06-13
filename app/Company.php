@@ -15,6 +15,10 @@ class Company extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
+    public function template() {
+        return $this->belongsTo(Template::class,'template_id');
+    }
+
     public function companyType() {
         return $this->belongsTo(CompanyType::class,'company_type_id');
     }
