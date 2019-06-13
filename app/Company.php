@@ -9,7 +9,7 @@ class Company extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name' ,'user_id' ,'company_type_id', 'registration_date'];
+    protected $fillable = ['name' ,'user_id' ,'company_type_id', 'registration_date','template_id'];
 
     public function user() {
         return $this->belongsTo(User::class,'user_id');
