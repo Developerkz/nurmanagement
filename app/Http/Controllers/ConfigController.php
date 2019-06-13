@@ -16,9 +16,25 @@ class ConfigController extends Controller
         }else{
             return 'fail';
         }
-
     }
 
+    public function keyGenerate(Request $request)
+    {
+        if($request->token == 'kasya'){
+            return Artisan::call('key:generate');
+        }else{
+            return 'fail';
+        }
+    }
+
+    public function configCache(Request $request)
+    {
+        if($request->token == 'kasya'){
+            return Artisan::call('config:cache');
+        }else{
+            return 'fail';
+        }
+    }
 
     public function dbSeed(Request $request)
     {
