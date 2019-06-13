@@ -13,9 +13,9 @@ class CompanyInformationsTableSeeder extends Seeder
     public function run()
     {
 
-        ip();
-        too();
-        oo();
+        $this->ip();
+        $this->too();
+        $this->oo();
 
     }
 
