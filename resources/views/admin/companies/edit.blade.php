@@ -50,7 +50,7 @@
                             @foreach($inputs as $input)
                                 <div class="form-group">
                                     <label>{{$input->title}}</label>
-                                    <input type="text" name="{{$input->name}}" class="form-control" placeholder="{{$input->title}}"/>
+                                    <input type="{{$input->type}}" value="{{json_decode($company->data, true)[$input->name]}}" name="{{$input->name}}" class="form-control" placeholder="{{$input->title}}"/>
                                 </div>
                             @endforeach
 

@@ -24,6 +24,7 @@ class CreateCompanyInfosTable extends Migration
 
             $table->string('name');
             $table->string('title');
+            $table->string('type')->default('text');
             $table->timestamps();
         });
     }

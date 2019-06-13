@@ -98,11 +98,19 @@ class CompanyController extends Controller
             'registration_date' =>'required|date',
         ]);
 
+        $inputs = CompanyInfo::where('company_type_id',$company->company_type_id)->get();
+
+        $data = array();
+        foreach ($inputs as $input){
+            $data[$input->name] = $request[$input->name] ? $request[$input->name] : '';
+        }
+
         if ($validator->fails()) {
             Session::flash('error' , 'Ошибка!');
             return redirect()->back()->withErrors($validator);
         }else{
             $company->fill($request->all());
+            $company->data = json_encode($data);
             $company->save();
             Session::flash('success' , 'Компания успешно обновлена!');
             return redirect()->back();
