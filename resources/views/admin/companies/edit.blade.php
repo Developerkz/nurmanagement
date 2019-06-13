@@ -42,10 +42,18 @@
                                 <label>Шаблон</label>
                                 <select name="template-id" class="form-control">
                                     @foreach($templates as $template)
-                                        <option {{$template->id == $company->template->id ? 'selected' : ''}} value="{{$template->id}}">{{$template->name}}</option>
+                                        <option {{$template->id == $company->template_id ? 'selected' : ''}} value="{{$template->id}}">{{$template->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
+
+                            @foreach($inputs as $input)
+                                <div class="form-group">
+                                    <label>{{$input->title}}</label>
+                                    <input type="text" name="{{$input->name}}" class="form-control" placeholder="{{$input->title}}"/>
+                                </div>
+                            @endforeach
+
                             {{csrf_field()}}
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block" value="Изменить">

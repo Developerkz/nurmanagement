@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\CompanyInfo;
 use App\CompanyType;
 use App\Role;
 use App\Template;
@@ -68,6 +69,7 @@ class CompanyController extends Controller
         $company = Company::find($id);
         $templates = Template::all();
         $companyTypes = CompanyType::all();
+        $inputs = CompanyInfo::where('company_type_id',$company->company_type_id)->get();
         if(!$company){
             Session::flash('error' , 'Компания не существует!');
             return redirect()->back();
@@ -78,7 +80,7 @@ class CompanyController extends Controller
             return redirect()->back();
         }
 
-        return view('admin.companies.edit', compact('company', 'companyTypes',"users", "templates"));
+        return view('admin.companies.edit', compact('company', 'companyTypes',"users", "templates","inputs"));
     }
 
     public function update(Request $request, $id){

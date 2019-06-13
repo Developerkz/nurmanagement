@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Шаблон</label>
-                                <select name="template-id" class="form-control">
+                                <select name="template_id" class="form-control">
                                     @foreach($templates as $template)
                                         <option value="{{$template->id}}">{{$template->name}}</option>
                                     @endforeach
