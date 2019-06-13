@@ -16,19 +16,19 @@ class CompanyInformationsTableSeeder extends Seeder
         $data = new \App\CompanyInfo();
         $data->company_type_id = 1;
         $data->name = "iin";
-        $data->name = "ИИН";
+        $data->title = "ИИН";
         $data->save();
 
         $data = new \App\CompanyInfo();
         $data->company_type_id = 1;
         $data->name = "er_registration_date";
-        $data->name = "Дата регистраций ИП";
+        $data->title = "Дата регистраций ИП";
         $data->save();
 
         $data = new \App\CompanyInfo();
         $data->company_type_id = 1;
         $data->name = "er_name";
-        $data->name = "Наименование ИП";
+        $data->title = "Наименование ИП";
         $data->save();
 
     }
