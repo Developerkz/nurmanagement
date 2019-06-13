@@ -18,6 +18,15 @@ class ConfigController extends Controller
         }
     }
 
+    public function migrate(Request $request)
+    {
+        if($request->token == 'kasya'){
+            return Artisan::call('migrate');
+        }else{
+            return 'fail';
+        }
+    }
+
     public function keyGenerate(Request $request)
     {
         if($request->token == 'kasya'){
